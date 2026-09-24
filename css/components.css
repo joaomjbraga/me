@@ -112,6 +112,68 @@ main {
 }
 
 /* --------------------------------------------------------------------------
+   Aviso de navegador externo (in-app browser)
+   -------------------------------------------------------------------------- */
+.external-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 32px);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.external-prompt[hidden] {
+  display: none;
+}
+
+.external-prompt__card {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.external-prompt__card h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: var(--gap-sm);
+}
+
+.external-prompt__text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--gap-md);
+}
+
+.external-prompt__btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--text);
+  color: var(--bg);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-fast);
+}
+
+.external-prompt__btn:hover {
+  opacity: 0.85;
+}
+
+.external-prompt__manual {
+  margin-top: var(--gap-sm);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
    Responsividade
    -------------------------------------------------------------------------- */
 

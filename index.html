@@ -22,7 +22,24 @@
       </main>
     </div>
 
+    <div class="external-prompt" id="externalPrompt" hidden>
+      <div
+        class="external-prompt__card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="externalPromptTitle"
+      >
+        <h2 id="externalPromptTitle">Abrir no navegador?</h2>
+        <p class="external-prompt__text" id="externalPromptText"></p>
+        <button type="button" class="external-prompt__btn" id="externalOpenBtn">
+          Abrir no navegador
+        </button>
+        <p class="external-prompt__manual" id="externalPromptManual"></p>
+      </div>
+    </div>
+
     <script src="js/icons.js" defer></script>
     <script src="js/links.js" defer></script>
+    <script src="js/external-browser.js" defer></script>
   </body>
 </html>
