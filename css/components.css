@@ -1,0 +1,161 @@
+/* ==========================================================================
+   components.css
+   Componentes da página: lista de links
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   App / layout
+   -------------------------------------------------------------------------- */
+.app {
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding-inline: clamp(16px, 4vw, 32px);
+  padding-block: clamp(16px, 3vh, 24px);
+}
+
+main {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Ícones carregados como <img> (fallback sem fetch)
+   -------------------------------------------------------------------------- */
+.icon--image img {
+  width: 100%;
+  height: 100%;
+  filter: var(--icon-image-filter);
+}
+
+/* --------------------------------------------------------------------------
+   Lista de links
+   -------------------------------------------------------------------------- */
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+  padding: 14px 18px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-fast),
+    background-color var(--transition-fast), border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.link-card:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--border);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.link-card:active {
+  transform: translateY(0);
+}
+
+.link-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.link-card:hover .link-card__icon {
+  color: var(--text);
+}
+
+.link-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.link-card__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.link-card__label {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.link-card__arrow {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.link-card__arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+.link-card:hover .link-card__arrow {
+  transform: translateX(2px);
+  color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   Responsividade
+   -------------------------------------------------------------------------- */
+
+/* --- Telas muito pequenas (smartphones, < 480px) -------------------------- */
+@media (max-width: 479px) {
+  .link-card {
+    gap: var(--gap-sm);
+    padding: 12px 14px;
+  }
+
+  .link-card__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .link-card__label {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Telas pequenas (≤ 360px) --------------------------------------------- */
+@media (max-width: 360px) {
+  .app {
+    padding-inline: 12px;
+  }
+}
+
+/* --- Telas grandes (desktop, ≥ 1024px) ------------------------------------ */
+@media (min-width: 1024px) {
+  .app {
+    max-width: 660px;
+  }
+
+  .link-card {
+    gap: var(--gap-md);
+    padding: 16px 22px;
+  }
+
+  .link-card__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .link-card__label {
+    font-size: 1rem;
+  }
+}
